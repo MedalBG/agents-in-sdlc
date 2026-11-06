@@ -11,69 +11,70 @@ next: false
 
 ## Revisar el trabajo
 
-A lo largo de esta práctica has trabajado con GitHub Copilot en varias tareas centradas en mejorar la experiencia de usuario. Has utilizado el modo agente para añadir filtros en el cliente y el servidor, el servidor MCP de Playwright para probar manualmente ese trabajo en un navegador y, después, un agente personalizado para implementar funciones de accesibilidad —controles de alto contraste y modo claro—, y has dirigido la sesión sobre la marcha para ampliar el trabajo. Ahora toca publicar ese trabajo local y revisarlo como lo haría tu equipo.
+Durante este taller has trabajado con GitHub Copilot en varias tareas para mejorar la experiencia de usuario. Utilizaste el modo agente para añadir filtros en el cliente y el servidor, Playwright MCP para probarlos manualmente en un navegador y un agente personalizado para implementar los modos de alto contraste y claro. También guiaste la sesión para ampliar el trabajo. Ahora publicarás esos cambios locales y los revisarás como lo haría tu equipo.
 
 ### Escenario
 
-Los fundamentos del diseño de software y DevOps no cambian con la incorporación de la IA generativa. Sigue siendo necesario un ciclo de revisión real de todo lo que produce Copilot. Teniendo esto en cuenta, vamos a enviar los cambios de accesibilidad desde el codespace, abrir una solicitud de incorporación de cambios y examinar las diferencias antes de involucrar al resto del equipo.
-## Publicar las funciones de accesibilidad
+Los fundamentos del diseño de software y DevOps no cambian con la IA generativa. Hay que revisar el trabajo de Copilot como cualquier otro cambio. En esta lección enviarás los cambios de accesibilidad desde el Codespace, abrirás una solicitud de incorporación de cambios y revisarás sus diferencias antes de pedir la revisión del equipo.
 
-Los controles de alto contraste y modo claro que has implementado con el agente personalizado de accesibilidad en el [ejercicio 4][exercise-4] y el [ejercicio 5][exercise-5] están en el codespace como cambios confirmados mediante commits. Vamos a enviarlos a una rama y a abrir una solicitud de incorporación de cambios para que el resto del equipo pueda revisarlos.
+## Publica las funciones de accesibilidad
 
-1. Vuelve al codespace.
+Los modos de alto contraste y claro que implementaste con el agente de accesibilidad en los [ejercicios 4][exercise-4] y [5][exercise-5] están confirmados mediante commits en el Codespace. Enviarás la rama y abrirás una PR:
+
+1. Vuelve al Codespace.
 2. Abre la vista **Source Control** en VS Code.
-3. Confirma que los cambios de accesibilidad están confirmados mediante commits. Si tienes cambios sin confirmar del ejercicio 5, añádelos al área de preparación y crea un commit ahora con un mensaje descriptivo como `Add high-contrast and light-mode toggles`.
-4. Publica la rama seleccionando **Publish Branch** (o utiliza el menú **...** → **Push**).
-5. VS Code te ofrecerá abrir la nueva rama en github.com. Acepta la propuesta o ve a tu repositorio manualmente y selecciona **Compare & pull request** en el aviso de la rama.
-6. Establece un título claro (por ejemplo, `Add high-contrast and light-mode toggles`) y una descripción breve que resuma qué se ha hecho y por qué.
+3. Confirma que los cambios de accesibilidad están confirmados mediante commits. Si quedan cambios sin confirmar del ejercicio 5, prepáralos y crea un commit descriptivo, como `Add high-contrast and light-mode toggles`.
+4. Publica la rama con **Publish Branch** o con **...** → **Push**.
+5. Si VS Code te ofrece abrir la rama en github.com, acepta. También puedes abrir el repositorio y seleccionar **Compare & pull request** en el aviso de la rama.
+6. Escribe un título claro, como `Add high-contrast and light-mode toggles`, y una descripción breve.
 7. Selecciona **Create pull request**.
-8. Una vez abierta la PR, selecciona la pestaña **Files changed** para revisar todo el trabajo. Presta especial atención a:
-   - Los componentes de la interfaz que permiten alternar entre modos.
-   - El uso del almacenamiento local para conservar las preferencias del usuario.
-   - Los cambios de CSS o de estilos para los modos de alto contraste y claro.
-   - Los atributos de accesibilidad (etiquetas ARIA, navegación por teclado, etc.).
-   - Cualquier código JavaScript/TypeScript que gestione el cambio de modo.
-
+8. Cuando se abra la PR, selecciona **Files changed** y revisa todos los cambios. Presta atención a:
+   - los controles de la interfaz para cambiar de modo.
+   - el uso del almacenamiento local para conservar las preferencias.
+   - los cambios de estilo para los modos de alto contraste y claro.
+   - los atributos de accesibilidad (etiquetas ARIA, navegación por teclado, etc.).
+   - el código JavaScript/TypeScript que gestiona los modos.
 9. Vuelve a la pestaña **Conversation**.
 10. Si hay flujos de trabajo pendientes de aprobación, selecciona **Approve and run workflows**.
 
-    ![Aprobar y ejecutar flujos de trabajo con Approve and run workflows](../../../_images/shared-approve-workflows.png)
-11. Espera a que terminen los flujos de trabajo. Si todo va bien, deberían completarse correctamente.
+    ![Aprobar y ejecutar flujos de trabajo](../../../_images/shared-approve-workflows.png)
+
+11. Espera a que terminen los flujos de trabajo y comprueba que se superen.
 
 > [!TIP]
-> ¿Quieres una segunda opinión sobre el trabajo de accesibilidad? Menciona a `@copilot` en un comentario de la PR con una petición como «revisa esta PR para detectar otros problemas de WCAG» o «sugiere mejoras en la navegación por teclado». Copilot iniciará una nueva sesión para atender el comentario.
+> Para pedir otra opinión sobre la accesibilidad, menciona a `@copilot` en un comentario de la PR; por ejemplo, puedes pedirle que revise otros problemas de WCAG o sugiera mejoras en la navegación por teclado.
 
-## Ejercicio opcional: seguir explorando localmente
+## Ejercicio opcional: sigue explorando localmente
 
-Trabajar de forma iterativa con un agente en el IDE es una habilidad, y la única forma de desarrollarla es repetir. Algunas ideas para próximas sesiones que puedes realizar desde VS Code:
+Trabajar de forma iterativa con un agente en el IDE es una habilidad que se desarrolla con la práctica. Puedes probar estas tareas en VS Code:
 
-- Añadir un formulario de interés para patrocinadores en la página de detalles del juego.
-- Implementar la paginación en la página de la lista de juegos.
-- Añadir validación de entradas y gestión de errores a las funciones auxiliares de acceso a datos en `src/lib/`.
-- Ampliar el alcance del agente de accesibilidad; por ejemplo, auditar el orden del foco del teclado en todo el sitio.
+- añadir un formulario de interés para patrocinadores en la página de detalles del juego.
+- implementar la paginación en la página de la lista de juegos.
+- añadir validación de entradas y gestión de errores a las funciones de acceso a datos de `src/lib/`.
+- ampliar el alcance del agente de accesibilidad, por ejemplo, para revisar el orden del foco del teclado en todo el sitio.
 
 ## Resumen
 
-¡Enhorabuena! Has completado el itinerario de VS Code. A lo largo de esta práctica:
+¡Enhorabuena! Has completado el itinerario de VS Code. En este taller:
 
-- **Has utilizado Playwright MCP para probar manualmente la funcionalidad.** Has añadido el servidor MCP de Playwright y dejado que Copilot maneje un navegador para verificar la funcionalidad de filtrado antes de abrir una solicitud de incorporación de cambios.
-- **Has dirigido el modo agente en cambios coordinados en todas las capas.** Has añadido una funcionalidad de filtrado que ha afectado al cliente, al servidor y a las pruebas en una sola sesión.
-- **Has utilizado un agente personalizado.** Has seleccionado el agente personalizado centrado en la accesibilidad en el selector de agentes y observado cómo implementaba el modo de alto contraste en el repositorio.
-- **Has gestionado y dirigido una sesión de agente.** Has revisado los cambios propuestos en el propio editor, aceptado los que querías y ampliado la sesión con una petición posterior para el modo claro.
-- **Has cerrado el ciclo con una solicitud de incorporación de cambios.** Has publicado el trabajo local y lo has revisado de principio a fin como lo haría tu equipo.
+- **Utilizaste Playwright MCP para probar manualmente la funcionalidad.** Añadiste el servidor y dejaste que Copilot manejara un navegador para verificar el filtrado antes de abrir una PR.
+- **Utilizaste el modo agente para coordinar cambios en varias capas.** Añadiste una funcionalidad que afectó al cliente, al servidor y a las pruebas en una sesión.
+- **Utilizaste un agente personalizado.** Seleccionaste el agente de accesibilidad y observaste cómo implementaba el modo de alto contraste.
+- **Gestionaste y guiaste una sesión de agente.** Revisaste los cambios propuestos y ampliaste el trabajo con una petición para añadir el modo claro.
+- **Cerraste el ciclo con una solicitud de incorporación de cambios.** Publicaste el trabajo local y lo revisaste de principio a fin.
 
 ## Revisión y siguientes pasos
 
-Aquí termina el itinerario obligatorio de VS Code. Puedes parar aquí con el taller completo.
+Has completado el itinerario obligatorio de VS Code. Puedes detenerte aquí.
 
-Si quieres ampliar tu perspectiva sobre las capacidades de los agentes de Copilot, los otros itinerarios cubren escenarios relacionados a través de distintas interfaces:
+Para explorar otras experiencias de agentes, consulta:
 
-- 💻 **[Itinerario de CLI](../../cli/)**: realiza flujos similares desde el terminal con Copilot CLI: modo plan, habilidades de agente, agentes personalizados y comandos de barra como `/share`, `/context` y `/delegate`.
-- ☁️ **[Itinerario del agente en la nube](../../cloud/)**: céntrate en asignar incidencias al agente en la nube, supervisar sesiones a través de la página de agentes e iterar de forma asíncrona sobre solicitudes de incorporación de cambios.
+- 💻 **[Itinerario de CLI](../../cli/)**: entrega dos cambios revisados desde el terminal con Plan y Autopilot, habilidades, un agente QA, Playwright MCP, Agent Merge y transferencias con contexto.
+- ☁️ **[Itinerario del agente en la nube](../../cloud/)**: asigna incidencias al agente en la nube, supervisa sesiones desde la página de agentes e itera de forma asíncrona sobre las solicitudes de incorporación de cambios.
 
-También puedes seguir ampliando lo que has empezado aquí. [awesome-copilot][awesome-copilot] es una gran fuente de archivos de instrucciones, agentes personalizados y habilidades que puedes adaptar a tus propios proyectos.
+También puedes utilizar los archivos de instrucciones, agentes personalizados y habilidades de [awesome-copilot][awesome-copilot] como punto de partida para tus proyectos.
 
-Como ampliación opcional, [Opcional: Incorporar Foundry][exercise-7] utiliza VS Code y Microsoft Foundry Toolkit para preparar un modelo, implementar un Backer Concierge y conectarlo al sitio.
+Como ampliación opcional, [Opcional: Incorporar Foundry][exercise-7] utiliza VS Code y Microsoft Foundry Toolkit para preparar un modelo, desplegar Backer Concierge y conectarlo al sitio.
 
 ## Recursos
 
@@ -83,7 +84,7 @@ Como ampliación opcional, [Opcional: Incorporar Foundry][exercise-7] utiliza VS
 
 ---
 
-| [← Lección anterior: Gestionar agentes][previous-lesson] |
+| [← Lección anterior: Supervisar y gestionar agentes][previous-lesson] |
 |:--|
 
 [previous-lesson]: ../5-managing-agents/
